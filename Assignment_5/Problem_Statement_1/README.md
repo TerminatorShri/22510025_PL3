@@ -1,8 +1,10 @@
-# React + Vite
+Steps to Set Up and Run the Project
+Step 1: Install Node.js
+Ensure that Node.js is installed on your machine. If you don’t have it installed, download and install the latest version from the official Node.js website.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Step 2: Install Project Dependencies
+Navigate to the root folder of the project in your terminal, then run the following command to install all the necessary Node.js modules: npm install
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Step 3: Start the Development Server
+Once the dependencies are installed, start the development server by running: npm run dev
+This will launch the website, and you can view it by navigating to the provided URL in your browser.
