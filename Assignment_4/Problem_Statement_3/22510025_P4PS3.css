@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px;
+}
+
+#red,
+#green {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+  transition: transform 0.5s ease;
+}
+
+#red {
+  background-color: red;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#green {
+  background-color: green;
+  position: relative;
+}
+
+#button {
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminator Tech Store</title>
+    <link rel="stylesheet" href="22510025_P3PS3.css" />
+  </head>
+  <body>
+    <nav class="navbar-main">
+      <div class="navbar-heading-div">
+        <h1 class="navbar-heading">Terminator Tech Store</h1>
+      </div>
+      <div class="navbar-menu-div">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="#">Cart (<span id="cart-cnt">0</span>)</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="featured-products-main">
+      <h2 class="featured-products-title">Featured Products</h2>
+      <div class="featured-products-div">
+        <div class="featured-products">
+          <p class="featured-products-type">Mobiles</p>
+          <div class="featured-products-img">
+            <img src="iPhone.png" alt="mobileLogo" />
+            <img src="vivo.jpg" alt="mobileLogo" />
+            <img src="oneplus.png" alt="mobileLogo" />
+            <img src="oppo.png" alt="mobileLogo" />
+          </div>
+        </div>
+        <div class="featured-products">
+          <p class="featured-products-type">Laptops</p>
+          <div class="featured-products-img">
+            <img src="hp.png" alt="laptopLogo" />
+            <img src="asus.jpg" alt="laptopLogo" />
+            <img src="lenovo.png" alt="laptopLogo" />
+            <img src="dell.jpg" alt="laptopLogo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <h2 class="other-products-title">Products</h2>
+      <div class="other-products-div">
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="s23ultra.jpeg"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">Galaxy S23 Ultra 5G</h3>
+            <p class="other-product-brand">Brand: Samsung</p>
+            <p class="other-product-price">₹69,999</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="iphone14.jpg"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">iPhone 14 Pro Max</h3>
+            <p class="other-product-brand">Brand: Apple</p>
+            <p class="other-product-price">₹1,49,999</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="nothing.jpeg"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">Nothing Phone 2</h3>
+            <p class="other-product-brand">Brand: Oneplus</p>
+            <p class="other-product-price">₹33,999</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="hpvictus.png"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">Victus Gaming Laptop</h3>
+            <p class="other-product-brand">Brand: HP</p>
+            <p class="other-product-price">₹60,990</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="legion.jpg"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">Legion Pro Gen 8</h3>
+            <p class="other-product-brand">Brand: Lenovo</p>
+            <p class="other-product-price">[Price]</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="other-product">
+          <div class="other-product-top">
+            <img
+              src="tuf.png"
+              alt="other-product-img"
+              class="other-product-img"
+            />
+          </div>
+          <div class="other-product-bottom">
+            <h3 class="other-product-name">TUF F15 Gaming</h3>
+            <p class="other-product-brand">Brand: Asus</p>
+            <p class="other-product-price">₹1,29,990</p>
+            <button class="add-to-cart-btn" onclick="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-main-div">
+      <div class="contact-left">
+        <img src="contact.svg" alt="contact-img" />
+      </div>
+      <div class="contact-right">
+        <h1 class="contact-heading">Contact Us</h1>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Subject"
+              id="subject"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="3"
+              placeholder="Enter Your Query"
+              required
+            ></textarea>
+          </div>
+          <button class="contact-send" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer-main">
+      <div class="footer-content">
+        <p>&copy; 2024 Terminator Tech. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="22510025_P3PS3.js"></script>
+  </body>
+</html>
