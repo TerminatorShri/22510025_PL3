@@ -1,0 +1,17 @@
+.agent-card {
+  padding: 20px;
+  border-radius: 10px;
+  width: 275px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.agent-card:hover {
+  transform: scale(1.05);
+}
+
+.agent-icon {
+  width: 100%;
+  border-radius: 10px;
+}
