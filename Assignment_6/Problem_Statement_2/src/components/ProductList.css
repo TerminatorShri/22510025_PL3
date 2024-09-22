@@ -1,0 +1,24 @@
+.product-main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 5px;
+}
+
+.product-card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.product-card-img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card-btn {
+  margin: 10px;
+}

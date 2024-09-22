@@ -1,0 +1,15 @@
+.card-main-div {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 30px auto;
+}
+
+.checkout-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid black;
+}

@@ -1,0 +1,21 @@
+.product-detail-card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 30px;
+}
+
+.product-detail-card-img {
+  height: 140px;
+  width: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-detail-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
