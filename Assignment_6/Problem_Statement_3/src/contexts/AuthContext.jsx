@@ -18,9 +18,21 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const logout = () => {
+    setIsAuthenticated(false);
+    setUser(null);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, user, login, setIsAuthenticated, setUser }}
+      value={{
+        isAuthenticated,
+        user,
+        login,
+        logout,
+        setIsAuthenticated,
+        setUser,
+      }}
     >
       {children}
     </AuthContext.Provider>
