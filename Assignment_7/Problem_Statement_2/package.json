@@ -1,0 +1,15 @@
+{
+  "name": "basic-express-server",
+  "version": "1.0.0",
+  "description": "A basic Express.js server with routes for home, about, and contact pages.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,4 +1,5 @@
 *.zip
 *.txt
 *.pdf
+node_modules
 PL3 Submission Format.docx
