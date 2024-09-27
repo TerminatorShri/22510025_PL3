@@ -1,6 +1,6 @@
 function TaskItem({ task, onComplete, onRemove }) {
   return (
-    <li className="flex justify-between items-center p-2 bg-gray-100 rounded-md shadow-sm">
+    <li className="flex justify-between items-center p-3 bg-gray-50 rounded-lg shadow-md">
       <input
         type="checkbox"
         checked={task.completed}
@@ -9,7 +9,7 @@ function TaskItem({ task, onComplete, onRemove }) {
       />
       <span
         className={`flex-grow ${
-          task.completed ? "line-through text-gray-500" : ""
+          task.completed ? "line-through text-gray-400" : ""
         }`}
       >
         {task.text}

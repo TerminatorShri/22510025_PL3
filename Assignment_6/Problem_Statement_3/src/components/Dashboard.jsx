@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-96 text-center">
+      <div className="bg-white p-8 rounded w-96 text-center">
         <h2 className="text-2xl font-bold mb-4">Welcome, {user?.name}!</h2>
         <p className="mb-4">This is your personalized dashboard.</p>
         <button

@@ -10,7 +10,8 @@ import { useOutletContext, Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cartItems, handleAddToCart } = useOutletContext();
+  const { cartItems, handleAddToCart, handleRemoveFromCart } =
+    useOutletContext();
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -29,13 +30,21 @@ const Cart = () => {
               primary={item.name}
               secondary={`$${item.price} x ${item.quantity}`}
             />
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={() => handleAddToCart(item)}
-            >
-              Add Another
-            </Button>
+            <div className="quantity-change">
+              <Button
+                onClick={() => handleAddToCart(item)}
+                className="quantity-btn"
+              >
+                +
+              </Button>
+              <ListItemText primary={item.quantity} />
+              <Button
+                onClick={() => handleRemoveFromCart(item)}
+                className="quantity-btn"
+              >
+                -
+              </Button>
+            </div>
           </ListItem>
         ))}
       </List>

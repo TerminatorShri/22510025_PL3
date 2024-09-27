@@ -31,15 +31,25 @@ function App() {
   });
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 border-2 border-gray-300 rounded-md shadow-lg">
-      <h1 className="text-2xl font-bold mb-4 text-center">To-do List</h1>
+    <div className="max-w-4xl mx-auto mt-10 p-6 bg-white border border-gray-200 rounded-lg shadow-xl">
+      <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-6">
+        To-do List
+      </h1>
       <AddTaskForm onAddTask={addTask} />
-      <Filter filter={filter} setFilter={setFilter} />
-      <TaskList
-        tasks={filteredTasks}
-        onComplete={toggleTaskCompletion}
-        onRemove={removeTask}
-      />
+
+      <div className="flex mt-6 space-x-6">
+        <div className="w-1/4">
+          <Filter filter={filter} setFilter={setFilter} />
+        </div>
+
+        <div className="w-3/4">      
+          <TaskList
+            tasks={filteredTasks}
+            onComplete={toggleTaskCompletion}
+            onRemove={removeTask}
+          />
+        </div>
+      </div>
     </div>
   );
 }

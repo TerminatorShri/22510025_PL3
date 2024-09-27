@@ -1,30 +1,36 @@
 import { useState } from "react";
 
 function AddTaskForm({ onAddTask }) {
-  const [task, setTask] = useState('');
-  const [error, setError] = useState('');
+  const [task, setTask] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.trim() === '') {
-      setError('Task cannot be empty');
+    if (task.trim() === "") {
+      setError("Task cannot be empty");
       return;
     }
     onAddTask(task);
-    setTask('');
-    setError('');
+    setTask("");
+    setError("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-2">
-      <input 
-        type="text" 
-        value={task} 
-        onChange={(e) => setTask(e.target.value)} 
-        placeholder="Add a task" 
-        className="border-2 p-2 rounded-md w-full"
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center space-y-4"
+    >
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Add a task"
+        className="border-2 border-gray-300 p-2 rounded-full w-full focus:ring-2 focus:ring-indigo-500"
       />
-      <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">
+      <button
+        type="submit"
+        className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700"
+      >
         Add Task
       </button>
       {error && <p className="text-red-500">{error}</p>}
@@ -33,4 +39,3 @@ function AddTaskForm({ onAddTask }) {
 }
 
 export default AddTaskForm;
-
