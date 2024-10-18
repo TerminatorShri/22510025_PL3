@@ -6,7 +6,7 @@ const getBooks = async (req, res) => {
   const { page = 1, limit = 10, genre, author } = req.query;
 
   const offset = (page - 1) * limit;
-  let query = "SELECT * FROM Book";
+  let query = "SELECT * FROM Books";
   const params = [];
 
   if (genre || author) {
@@ -34,7 +34,7 @@ const getBooks = async (req, res) => {
       }
 
       const countQuery =
-        "SELECT COUNT(*) AS total FROM Book" +
+        "SELECT COUNT(*) AS total FROM Books" +
         (genre || author
           ? " WHERE" +
             (genre ? " genre = ?" : "") +
@@ -75,7 +75,7 @@ const addNewBook = async (req, res) => {
   const { indx, title, author, genre, publicationYear } = req.body;
 
   const query =
-    "INSERT INTO Book (indx, title, author, genre, publicationYear) VALUES (?, ?, ?, ?, ?)";
+    "INSERT INTO Books (indx, title, author, genre, publication_year) VALUES (?, ?, ?, ?, ?)";
   const params = [indx, title, author, genre, publicationYear];
 
   try {
@@ -108,7 +108,7 @@ const updateBookById = async (req, res) => {
   const updateData = req.body;
 
   const query =
-    "UPDATE Book SET title = ?, author = ?, genre = ?, publicationYear = ? WHERE indx = ?";
+    "UPDATE Books SET title = ?, author = ?, genre = ?, publication_year = ? WHERE indx = ?";
   const params = [
     updateData.title,
     updateData.author,
@@ -149,7 +149,7 @@ const updateBookById = async (req, res) => {
 const deleteBookById = async (req, res) => {
   const { indx } = req.params;
 
-  const query = "DELETE FROM Book WHERE indx = ?";
+  const query = "DELETE FROM Books WHERE indx = ?";
   const params = [indx];
 
   try {

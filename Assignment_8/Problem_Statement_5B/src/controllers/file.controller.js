@@ -5,7 +5,7 @@ import db from "../db/DBConnect.js";
 
 const getAllFiles = async (req, res) => {
   try {
-    const [files] = await db.promise().query("SELECT * FROM File");
+    const [files] = await db.promise().query("SELECT * FROM Files");
     return res
       .status(200)
       .json(new ApiResponse(200, files, "Files fetched successfully."));
@@ -20,7 +20,7 @@ const downloadFileById = async (req, res) => {
     const fileId = req.params.fileId;
     const [rows] = await db
       .promise()
-      .query("SELECT * FROM File WHERE indx = ?", [fileId]);
+      .query("SELECT * FROM Files WHERE indx = ?", [fileId]);
     const file = rows[0];
 
     if (!file) {
@@ -55,11 +55,10 @@ const uploadFile = async (req, res) => {
 
     const result = await db
       .promise()
-      .query("INSERT INTO File (indx, name, cloudinaryUrl) VALUES (?, ?, ?)", [
-        fileData.indx,
-        fileData.name,
-        fileData.cloudinaryUrl,
-      ]);
+      .query(
+        "INSERT INTO Files (indx, name, cloudinary_url) VALUES (?, ?, ?)",
+        [fileData.indx, fileData.name, fileData.cloudinaryUrl]
+      );
 
     const newFile = { ...fileData, id: result[0].insertId };
 
@@ -78,19 +77,11 @@ const updateFileById = async (req, res) => {
     const indx = req.params.indx;
     const [rows] = await db
       .promise()
-      .query("SELECT * FROM File WHERE indx = ?", [indx]);
+      .query("SELECT * FROM Files WHERE indx = ?", [indx]);
     const fileToUpdate = rows[0];
 
     if (!fileToUpdate) {
       throw new ApiError(404, "File not found");
-    }
-
-    const deleteResult = await deleteFileFromCloudinary(
-      fileToUpdate.cloudinaryUrl
-    );
-
-    if (!deleteResult) {
-      throw new ApiError(500, "Error deleting old file from Cloudinary");
     }
 
     if (!req.file) {
@@ -99,7 +90,7 @@ const updateFileById = async (req, res) => {
 
     await db
       .promise()
-      .query("UPDATE File SET name = ?, cloudinaryUrl = ? WHERE indx = ?", [
+      .query("UPDATE Files SET name = ?, cloudinary_url = ? WHERE indx = ?", [
         req.file.originalname,
         req.file.path,
         indx,
@@ -126,22 +117,14 @@ const deleteFileById = async (req, res) => {
     const indx = req.params.fileId;
     const [rows] = await db
       .promise()
-      .query("SELECT * FROM File WHERE indx = ?", [indx]);
+      .query("SELECT * FROM Files WHERE indx = ?", [indx]);
     const fileToDelete = rows[0];
 
     if (!fileToDelete) {
       throw new ApiError(404, "File not found");
     }
 
-    const deleteResult = await deleteFileFromCloudinary(
-      fileToDelete.cloudinaryUrl
-    );
-
-    if (!deleteResult) {
-      throw new ApiError(500, "Error deleting file from Cloudinary");
-    }
-
-    await db.promise().query("DELETE FROM File WHERE indx = ?", [indx]);
+    await db.promise().query("DELETE FROM Files WHERE indx = ?", [indx]);
 
     res
       .status(200)
