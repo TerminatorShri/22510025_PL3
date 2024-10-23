@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rowdy-font {
+  font-family: "Rowdies", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.nunito-font {
+  font-family: "Nunito", system-ui;
+}
+
+.fredoka-font {
+  font-family: "Fredoka", sans-serif;
+}
+
+.playwrite-de-grund-font {
+  font-family: "Playwrite DE Grund", cursive;
+}
+
+.acme-font {
+  font-family: "Acme", sans-serif;
+}
+
+.tajawal-font {
+  font-family: "Tajawal", sans-serif;
+}
