@@ -12,13 +12,13 @@ const {
 
 const createNewTask = (req, res) => {
   console.log("req");
-  const { userId, title, desc, dueDate, status, category, priority } = req.body;
+  const { userId, title, description, dueDate, status, category, priority } = req.body;
 
   if (!userId || !title || !dueDate) {
     return res.status(400).json(new ApiError(400, "Missing required fields"));
   }
 
-  const taskInfo = { userId, title, desc, dueDate, status, category, priority };
+  const taskInfo = { userId, title, description, dueDate, status, category, priority };
 
   createTask(taskInfo, (err, result) => {
     if (err) {
