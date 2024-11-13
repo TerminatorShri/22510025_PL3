@@ -43,6 +43,9 @@
       const input = document.getElementById("input");
       const messages = document.getElementById("messages");
 
+      const username = prompt("Enter your username:");
+      console.log(username);
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (input.value) {

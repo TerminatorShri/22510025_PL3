@@ -80,7 +80,7 @@ const TaskForm = ({ setShowForm, isEditForm, setIsEditForm, editTask }) => {
       setValue("description", editTask.description);
       setValue("priority", editTask.priority);
       setValue("category", editTask.category);
-      setValue("dueDate", editTask.dueDate);
+      setValue("dueDate", editTask.dueDate.split("T")[0]);
     }
   }, [isEditForm, editTask, setValue]);
 
